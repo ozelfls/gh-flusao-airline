@@ -31,7 +31,7 @@
   },
   {
     "ID": 4,
-    "Title": "Voos da empresa Azul",
+    "Title": "Voos por empresa",
     "Group": "Voos e escalas",
     "Kind": "read",
     "SQL": "SELECT codigo_voo,situacao,valor FROM voos WHERE empresa=:empresa COLLATE NOCASE ORDER BY codigo_voo",
@@ -39,7 +39,7 @@
       "empresa"
     ],
     "Defaults": {
-      "empresa": "Azul"
+      "empresa": "Erlaine Linhas Aéreas"
     },
     "Note": "Azul é o valor inicial do filtro. Uma empresa diferente da sua sessão não retorna voos."
   },
@@ -137,7 +137,7 @@
   },
   {
     "ID": 13,
-    "Title": "Escalas do voo AD1001",
+    "Title": "Escalas por código do voo",
     "Group": "Voos e escalas",
     "Kind": "read",
     "SQL": "SELECT v.codigo_voo,e.sequencial,e.tempo_escala FROM voos v JOIN escalas e ON e.id_voo=v.id_voo WHERE v.codigo_voo=:codigo COLLATE NOCASE ORDER BY e.sequencial",
@@ -145,7 +145,7 @@
       "codigo"
     ],
     "Defaults": {
-      "codigo": "AD1001"
+      "codigo": "ER 3105"
     },
     "Note": ""
   },

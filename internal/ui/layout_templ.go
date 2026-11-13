@@ -39,7 +39,7 @@ func Layout(name string, role string, csrf string, content templ.Component) temp
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "\"><link rel=\"icon\" type=\"image/svg+xml\" href=\"/static/favicon.svg\"><title>Erlaine • Operações aeroportuárias</title><link rel=\"stylesheet\" href=\"/static/app.css\"><script src=\"/static/htmx.min.js\" defer></script><script src=\"/static/app.js\" defer></script></head><body><aside class=\"sidebar\"><a class=\"brand\" href=\"/\">✈ <span>ERLAINE<small>AIRPORT OPERATIONS</small></span></a><p class=\"nav-label\">ESPAÇO DE TRABALHO</p><nav><a href=\"/?entity=voo\">↗ <span>Voos e operações</span></a> ")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "\"><link rel=\"icon\" type=\"image/svg+xml\" href=\"/static/favicon.svg\"><title>Erlaine : Operações aeroportuárias</title><link rel=\"stylesheet\" href=\"/static/app.css\"><script src=\"/static/htmx.min.js\" defer></script><script src=\"/static/app.js\" defer></script></head><body><aside class=\"sidebar\"><a class=\"brand\" href=\"/\">✈ <span>ERLAINE<small>AIRPORT OPERATIONS</small></span></a><p class=\"nav-label\">ESPAÇO DE TRABALHO</p><nav><a href=\"/?entity=voo\">↗ <span>Voos e operações</span></a> ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

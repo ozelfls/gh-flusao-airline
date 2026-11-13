@@ -85,13 +85,13 @@ func (a *App) options(ctx context.Context, u User, en Entity) (map[string][]Opti
 			l := r["nome"]
 			switch key {
 			case "voo":
-				l = r["codigo_voo"] + " · " + a.localTime(r["partida"])
+				l = r["codigo_voo"] + " / " + a.localTime(r["partida"])
 			case "aeronave":
-				l = r["codigo_aeronave"] + " · " + r["modelo"]
+				l = r["codigo_aeronave"] + " / " + r["modelo"]
 			case "aeroporto":
-				l = r["sigla"] + " · " + r["nome"]
+				l = r["sigla"] + " / " + r["nome"]
 			case "passageiro":
-				l = r["nome"] + " · " + r["documento"]
+				l = r["nome"] + " / " + r["documento"]
 			}
 			labels[f.Key][r["id"]] = l
 			if !strings.HasPrefix(r["situacao"], "Exclu") {
@@ -466,7 +466,7 @@ func (a *App) detailData(r *http.Request, k string, id int64) (Detail, error) {
 			if key == "destino_id" {
 				label = "Destino"
 			}
-			d.Fields = append(d.Fields, Input{Field: field(key, label, "text"), Value: airport["sigla"] + " · " + airport["nome"]})
+			d.Fields = append(d.Fields, Input{Field: field(key, label, "text"), Value: airport["sigla"] + " / " + airport["nome"]})
 		}
 		flight, err := one(r.Context(), a.DB, "voo", num(row["voo_id"]))
 		if err != nil {

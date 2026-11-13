@@ -45,10 +45,13 @@ func (a *App) Bootstrap(ctx context.Context) error {
 		return fail("Falha ao consultar usuários")
 	}
 	if n > 0 {
-		return nil
+		return a.SeedPresentation(ctx)
 	}
 	if os.Getenv("DEMO_MODE") == "true" {
-		return a.SeedDemo(ctx)
+		if err := a.SeedDemo(ctx); err != nil {
+			return err
+		}
+		return a.SeedPresentation(ctx)
 	}
 	password := os.Getenv("ADMIN_PASSWORD")
 	email := os.Getenv("ADMIN_EMAIL")

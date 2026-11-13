@@ -232,7 +232,7 @@ func advancedRead(ctx context.Context, db querier, u User, q AdvancedQuery, v Ro
 					n, _ := strconv.ParseFloat(s, 64)
 					display = "R$ " + strings.ReplaceAll(fmt.Sprintf("%.2f", n), ".", ",")
 				} else {
-					display = "—"
+					display = "Não informado"
 				}
 			}
 			line = append(line, display)
@@ -315,7 +315,7 @@ func (a *App) advancedData(r *http.Request) (AdvancedData, error) {
 		d.Fields = []Input{{Field: field("valor", "Novo valor (R$)", "text"), Value: "1050.00"}}
 	case 40:
 		for _, row := range d.Table.Raw {
-			d.Candidates = append(d.Candidates, Option{row["id_aeroporto"] + ":" + row["versao"], row["sigla"] + " · " + row["nome"] + " · " + row["cidade"] + "/" + row["uf"]})
+			d.Candidates = append(d.Candidates, Option{row["id_aeroporto"] + ":" + row["versao"], row["sigla"] + " / " + row["nome"] + " / " + row["cidade"] + "/" + row["uf"]})
 		}
 	}
 	return d, nil
